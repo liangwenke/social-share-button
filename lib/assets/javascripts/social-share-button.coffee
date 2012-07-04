@@ -2,7 +2,7 @@ window.SocialShareButton =
   openUrl : (url) ->
     window.open(url)
     false
-    
+
   share : (el) ->
     site = $(el).data('site')
     title = encodeURIComponent($(el).parent().data('title'))
@@ -18,5 +18,11 @@ window.SocialShareButton =
       when "facebook"
         SocialShareButton.openUrl("http://www.facebook.com/sharer.php?t=#{title}&u=#{url}")
       when "qq"
-        SocialShareButton.openUrl("http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=#{url}&title=#{title}")
+        SocialShareButton.openUrl("http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=#{url}&title=#{title}&pics=#{img}")
+      when "tqq"
+        SocialShareButton.openUrl("http://share.v.t.qq.com/index.php?url=#{url}&title=#{title}&pic=#{img}")
+      when "t163"
+        SocialShareButton.openUrl("http://t.163.com/article/user/checkLogin.do?url=#{url}&info=#{title}-#{url}&images=#{img}")
+      when "tsohu"
+        SocialShareButton.openUrl("http://t.sohu.com/third/post.jsp?url=#{url}&title=#{title}&pic=#{img}")
     false
