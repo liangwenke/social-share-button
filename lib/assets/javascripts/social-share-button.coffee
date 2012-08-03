@@ -11,9 +11,9 @@ window.SocialShareButton =
 
     switch site
       when "weibo"
-        title = title + ' - 更多快乐分享 请关注 @哈皮士网 - '
+        title = title + '  - 更多快乐分享 请关注 @哈皮士网 - '
       when "tqq"
-        title = title + '&nbsp;&nbsp;&nbsp;&nbsp; ❤ 更多快乐分享 请收听 @hapishiv ❤ '
+        title = title + '   ❤ 更多快乐分享 请收听 @hapishiv ❤ '
       else
         title = title + '   ❤ 更多快乐分享 请访问哈皮士网： '
 
