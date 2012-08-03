@@ -20,6 +20,7 @@ window.SocialShareButton =
       when "qq"
         SocialShareButton.openUrl("http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=#{url}&title=#{title}&pics=#{img}")
       when "tqq"
+        title = title + '  ❤ 更多快乐分享 请收听 @hapishiv ❤'
         SocialShareButton.openUrl("http://share.v.t.qq.com/index.php?c=share&a=index&url=#{url}&title=#{title}&pic=#{img}")
       when "t163"
         SocialShareButton.openUrl("http://t.163.com/article/user/checkLogin.do?url=#{url}&info=#{title}-#{url}&images=#{img}")
