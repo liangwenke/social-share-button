@@ -8,6 +8,15 @@ window.SocialShareButton =
     title = encodeURIComponent($(el).parent().data('title'))
     img = encodeURIComponent($(el).parent().data("img"))
     url = encodeURIComponent($(el).parent().data("link") || location.href)
+
+    switch site
+      when "weibo"
+        title = title + '  ❤ 更多快乐分享 请关注 @哈皮士网 ❤'
+      when "tqq"
+        title = title + '  ❤ 更多快乐分享 请收听 @hapishiv ❤'
+      else
+        title = title + '  ❤ 更多快乐分享 请访问哈皮士网：'
+
     switch site
       when "weibo"
         SocialShareButton.openUrl("http://v.t.sina.com.cn/share/share.php?url=#{url}&pic=#{img}&title=#{title}&content=utf-8")
@@ -20,7 +29,6 @@ window.SocialShareButton =
       when "qq"
         SocialShareButton.openUrl("http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=#{url}&title=#{title}&pics=#{img}")
       when "tqq"
-        title = title + '  ❤ 更多快乐分享 请收听 @hapishiv ❤'
         SocialShareButton.openUrl("http://share.v.t.qq.com/index.php?c=share&a=index&url=#{url}&title=#{title}&pic=#{img}")
       when "t163"
         SocialShareButton.openUrl("http://t.163.com/article/user/checkLogin.do?url=#{url}&info=#{title}-#{url}&images=#{img}")
