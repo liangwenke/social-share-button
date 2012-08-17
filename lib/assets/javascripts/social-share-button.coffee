@@ -11,11 +11,11 @@ window.SocialShareButton =
 
     switch site
       when "weibo"
-        title = encodeURIComponent(title + '  - 更多快乐分享 请关注 @哈皮士网 - ')
+        title = title + encodeURIComponent('  - 更多快乐分享 请关注 @哈皮士网 - ')
       when "tqq"
-        title = encodeURIComponent(title + '  - 更多快乐分享 请收听 @hapishiv - ')
+        title = title + encodeURIComponent('  - 更多快乐分享 请收听 @hapishiv - ')
       else
-        title = encodeURIComponent(title + '   ❤ 更多快乐分享 请访问哈皮士网： ')
+        title = title + encodeURIComponent('   ❤ 更多快乐分享 请访问哈皮士网： ')
 
     switch site
       when "weibo"
