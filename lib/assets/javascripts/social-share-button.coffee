@@ -9,8 +9,6 @@ window.SocialShareButton =
     img = encodeURIComponent($(el).parent().data("img"))
     url = encodeURIComponent($(el).parent().data("link") || location.href)
 
-    alert("http://tieba.baidu.com/f/commit/share/openShareApi?title=#{title}&desc=&comment=&pic=#{img}&url=#{url}")
-
     switch site
       when "weibo"
         title = title + encodeURIComponent('  - 更多快乐分享 请关注 @哈皮士网 - ')
@@ -36,8 +34,8 @@ window.SocialShareButton =
         SocialShareButton.openUrl("http://t.163.com/article/user/checkLogin.do?url=#{url}&info=#{title}-#{url}&images=#{img}")
       when "tsohu"
         SocialShareButton.openUrl("http://t.sohu.com/third/post.jsp?url=#{url}&title=#{title}&pic=#{img}")
-      when "baidu_tieba"
-        SocialShareButton.openUrl("http://tieba.baidu.com/f/commit/share/openShareApi?title=#{title}&desc=&comment=&pic=#{img}&url=#{url}")
-      when "baidu_cang"
+      when "tieba"
+       SocialShareButton.openUrl("http://s.share.baidu.com/?click=1&to=tieba&title=#{title}&pic=#{img}&url=#{url}")
+      when "baidu"
         SocialShareButton.openUrl("http://cang.baidu.com/do/add?it=#{title}&iu=#{url}&linkid=&dc=&pic=#{img}")
     false
