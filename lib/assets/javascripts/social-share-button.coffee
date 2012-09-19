@@ -14,22 +14,24 @@ window.SocialShareButton =
         title = title + encodeURIComponent('  - 更多快乐分享 请关注 @哈皮士网 - ')
       when "tqq"
         title = title + encodeURIComponent('  - 更多快乐分享 请收听 @hapishiv - ')
+      when 'baidu_tieba'
+        title = $(el).parent().data('title')
       else
         title = title + encodeURIComponent('   ❤ 更多快乐分享 请访问哈皮士网： ')
 
     switch site
       when "weibo"
-        SocialShareButton.openUrl("http://v.t.sina.com.cn/share/share.php?url=#{url}&pic=#{img}&title=#{title}&appkey=177973613&content=utf-8")
+        SocialShareButton.openUrl("http://v.t.sina.com.cn/share/share.php?title=#{title}&url=#{url}&pic=#{img}&appkey=177973613&content=utf-8")
       when "twitter"
         SocialShareButton.openUrl("https://twitter.com/home?status=#{title}: #{url}")
       when "douban"
-        SocialShareButton.openUrl("http://www.douban.com/recommend/?image=#{img}&url=#{url}&title=#{title}&v=1&r=1")
+        SocialShareButton.openUrl("http://www.douban.com/recommend/?title=#{title}&url=#{url}&image=#{img}&v=1&r=1")
       when "facebook"
         SocialShareButton.openUrl("http://www.facebook.com/sharer.php?t=#{title}&u=#{url}")
       when "qq"
-        SocialShareButton.openUrl("http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=#{url}&title=#{title}&pics=#{img}")
+        SocialShareButton.openUrl("http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?title=#{title}&url=#{url}&pics=#{img}")
       when "tqq"
-        SocialShareButton.openUrl("http://share.v.t.qq.com/index.php?c=share&a=index&appkey=801227962&url=#{url}&title=#{title}&pic=#{img}")
+        SocialShareButton.openUrl("http://share.v.t.qq.com/index.php?c=share&a=index&appkey=801227962&title=#{title}&url=#{url}&pic=#{img}")
       when "t163"
         SocialShareButton.openUrl("http://t.163.com/article/user/checkLogin.do?url=#{url}&info=#{title}-#{url}&images=#{img}")
       when "tsohu"
@@ -37,5 +39,5 @@ window.SocialShareButton =
       when "baidu_tieba"
         SocialShareButton.openUrl("http://tieba.baidu.com/f/commit/share/openShareApi?title=#{title}&desc=&comment=&pic=#{img}&url=#{url}")
       when "baidu_cang"
-        SocialShareButton.openUrl("http://cang.baidu.com/do/add?iu=#{url}&linkid=&dc=&pic=#{img}&it=#{title}")
+        SocialShareButton.openUrl("http://cang.baidu.com/do/add?it=#{title}&iu=#{url}&linkid=&dc=&pic=#{img}")
     false
